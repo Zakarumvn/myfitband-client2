@@ -57,7 +57,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
         DatePipe,
 
         // provider used to create fake backend
-        fakeBackendProvider
+        // fakeBackendProvider
     ],
     bootstrap: [AppComponent]
 })
