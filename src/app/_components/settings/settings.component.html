@@ -1,0 +1,22 @@
+<div class="alert alert-danger" role="alert" *ngIf="showError">
+  Niepoprawna godzina
+</div>
+<div class="alert alert-success" role="alert" *ngIf="showConfirm">
+  Zapisano konfigurację
+</div>
+<div class="row mt-5">
+  <div class="col-md-5 mx-auto">
+    <h2 class="text-left">Konfiguracja</h2>
+    <div class="card mt-3">
+      <div class="card-body">
+        <div class="form-group">
+          <label for="notificationTime">Godzina przypomnienia o pomiarze wagi</label>
+          <input type="text" placeholder="06:20" id="notificationTime"
+                 required="required" class="form-control" [(ngModel)]="time" [maxLength]="5">
+        <small>Przypomnienia będą wysyłane codziennie o wybranej godzinie.</small>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="saveSettings()">Zapisz</button>
+      </div>
+    </div>
+  </div>
+</div>

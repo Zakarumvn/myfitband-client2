@@ -1,0 +1,32 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <a class="navbar-brand" routerLink="alert-list">MyFitBand</a>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" routerLink="alert-list">Strona główna<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="workouts" class="nav-link" routerLinkActive="active">Treningi</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="weight-chart" class="nav-link" routerLinkActive="active">Wykres wagi</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="settings" class="nav-link" routerLinkActive="active">Ustawienia</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)="logout()" routerLinkActive="active">Wyloguj</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- main app container -->
+<main role="main" class="container">
+
+    <div>
+        <alert></alert>
+        <router-outlet></router-outlet>
+
+    </div>
+
+</main>

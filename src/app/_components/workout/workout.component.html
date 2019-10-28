@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Treningi</h1>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th>Data</th>
+        <th>Rozpoczęcie</th>
+        <th>Zakończenie</th>
+        <th>Dyscyplina</th>
+        <th>Szczegóły</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let workout of workouts | async">
+        <td>{{workout.startDT | date:'dd-MM-yyyy'}}</td>
+        <td>{{workout.startDT | date:'hh:mm:ss'}}</td>
+        <td>{{workout.stopDT | date:'hh:mm:ss'}}</td>
+        <td>{{workout.sport.name}}</td>
+        <td><button [routerLink]="['/workout-details', workout.workoutId]" class="btn btn-secondary" name="details">Szczegóły</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

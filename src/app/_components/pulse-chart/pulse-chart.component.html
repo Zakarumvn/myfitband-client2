@@ -1,0 +1,11 @@
+<h1 class="text-left">Wykres pulsu</h1>
+<div class="card-body">
+    <google-chart
+            [hidden]="pulsesData.length == 0"
+            [title]="title"
+            [type]="type"
+            [data]="data"
+            [columnNames]="columnNames"
+            [options]="options">
+    </google-chart>
+</div>

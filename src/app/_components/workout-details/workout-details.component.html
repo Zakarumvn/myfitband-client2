@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Trening</h1>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th>Rozpoczęcie</th>
+        <th>Zakończenie</th>
+        <th>Dyscyplina</th>
+        <th>Wykres tętna</th>
+        <th>Trasa</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>{{workout.startDT | date:'dd-MM-yyyy hh:mm:ss'}}</td>
+        <td>{{workout.stopDT | date:'dd-MM-yyyy hh:mm:ss'}}</td>
+        <td>{{workout.sport.name}}</td>
+        <td><button [routerLink]="['/pulse-chart', workout.workoutId]" class="btn btn-secondary" name="details">Wyświetl</button></td>
+        <td><button [routerLink]="['/workout-map', workout.workoutId]" class="btn btn-secondary" name="details">Wyświetl</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
