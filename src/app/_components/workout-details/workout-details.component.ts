@@ -29,5 +29,19 @@ export class WorkoutDetailsComponent implements OnInit {
       });
   }
 
+  getCalories() {
+      if(this.workout){
+          var dateDiff = Math.abs(new Date(this.workout.stopDT).getTime() - new Date(this.workout.startDT).getTime());
+          var minutesOfWorkout = Math.floor(dateDiff / 60000);
+          if(minutesOfWorkout < 30) return "Twój trening trwał krócej niż 30 minut. " +
+              "Organizm zużywał wyłącznie zgromadzone zapasy energii, " +
+              "dlatego ilość spalonych przez Ciebie kalorii wynosi 0.";
+
+          var calories = ((minutesOfWorkout - 30) / 60) * this.workout.sport.kcalPerHour;
+
+          return "Efektywny czas Twojego treningu w minutach to: " + (minutesOfWorkout - 30) + ". W tym czasie udało Ci się spalić " + calories +" kcal.";
+      }
+  }
+
 
 }
