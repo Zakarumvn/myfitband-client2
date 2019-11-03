@@ -33,9 +33,11 @@ export class AuthenticationService {
             }));
     }
 
-    logout() {
+    logout(username) {
         // remove user from local storage and set current user to null
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
+        this.http.post<any>(`${this.config.apiUrl}/logout`, { username: username, password: null});
+
     }
 }

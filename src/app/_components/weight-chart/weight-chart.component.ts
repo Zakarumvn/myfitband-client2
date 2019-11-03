@@ -48,6 +48,7 @@ export class WeightChartComponent implements OnInit {
   }
 
   prepareSeries(data) {
+    this.wait();
     for (let i = 0; i < data.length; i++) {
       this.weightData.push([data[i].date as unknown as string,
         data[i].value,
@@ -59,15 +60,23 @@ export class WeightChartComponent implements OnInit {
 
   getData() {
     return [
-      ['7:45', 10],
-      ['7:46', 10],
-      ['7:47', 10],
-      ['7:48', 26],
-      ['7:49', 10],
-      ['7:49', 10],
-      ['7:49', 10],
-      ['7:49', 10]
+      ['2019-10-20', 50],
+      ['2019-10-20', 50],
+      ['2019-10-20', 50],
+      ['2019-10-20', 50],
+      ['2019-10-20', 50],
+      ['2019-10-20', 50],
+      ['2019-10-20', 50],
+      ['2019-10-20', 50],
+      ['2019-10-20', 50]
     ];
   }
 
+  sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async wait() {
+    await this.sleep(1000);
+  }
 }
